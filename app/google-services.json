@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "889642371155",
+    "firebase_url": "https://livestream1-e0c7f-default-rtdb.firebaseio.com",
+    "project_id": "livestream1-e0c7f",
+    "storage_bucket": "livestream1-e0c7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889642371155:android:40b266c353999ef4381ea6",
+        "android_client_info": {
+          "package_name": "com.moutamid.livestreamingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889642371155-2k3tvk3gk1di6n3fv8gbdirg1sac0vnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5SR9IfqCoADqhCADp1QtRSURdtFy6AV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889642371155-2k3tvk3gk1di6n3fv8gbdirg1sac0vnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889642371155:android:9ebfdee97e5f2289381ea6",
+        "android_client_info": {
+          "package_name": "com.moutamid.russiatvradio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889642371155-2k3tvk3gk1di6n3fv8gbdirg1sac0vnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5SR9IfqCoADqhCADp1QtRSURdtFy6AV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889642371155-2k3tvk3gk1di6n3fv8gbdirg1sac0vnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889642371155:android:d312cd91cdf0b040381ea6",
+        "android_client_info": {
+          "package_name": "com.moutamid.streaming_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889642371155-2k3tvk3gk1di6n3fv8gbdirg1sac0vnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5SR9IfqCoADqhCADp1QtRSURdtFy6AV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889642371155-2k3tvk3gk1di6n3fv8gbdirg1sac0vnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

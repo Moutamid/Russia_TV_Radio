@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appClr"
+    tools:context=".Settings_Activity">
+
+    <ImageView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@drawable/setting_name_russia"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Application Language"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_cardclr"
+                android:gravity="left"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:padding="10dp"
+                android:text="Select Language"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Button Help Text"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_cardclr"
+                android:gravity="left"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:padding="10dp"
+                android:text="Select Help Text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="My Sleep Timer"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_cardclr"
+                android:gravity="left"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:padding="10dp"
+                android:text="Select Sleep Timer"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="My Time Zone"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_cardclr"
+                android:gravity="left"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:padding="10dp"
+                android:text="Select Time Zone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="My Current Time"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_cardclr"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="hh:mm:ss"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:text="Time Format"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_cardclr"
+                android:gravity="left"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:padding="10dp"
+                android:text="Select Time Format"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_red"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="SAVE CHANGES"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Spinner
+        android:id="@+id/test_spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/test_spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/test_spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/test_spinner4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:visibility="gone" />
+
+    <Spinner
+        android:id="@+id/test_spinner6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:visibility="gone" />
+</RelativeLayout>
