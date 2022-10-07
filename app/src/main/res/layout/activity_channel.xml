@@ -7,15 +7,31 @@
     android:background="@color/appClr"
     tools:context=".Channel_Activity">
 
-    <ImageView
-        android:id="@+id/name"
+    <TextView
+        android:id="@+id/title_lang"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:src="@drawable/name_tv_channel" />
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/title_main"
+        android:layout_below="@+id/title_lang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/live_tv_channels"
+        android:textColor="@color/green"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="25sp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_below="@+id/name"
+        android:layout_below="@+id/title_main"
         android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

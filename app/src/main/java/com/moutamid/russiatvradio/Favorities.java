@@ -2,7 +2,14 @@ package com.moutamid.russiatvradio;
 
 import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 
+import static com.moutamid.russiatvradio.Settings_Activity.SHARED_PREFS;
+import static com.moutamid.russiatvradio.Settings_Activity.TEXT1_1;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +29,61 @@ public class Favorities extends AppCompatActivity {
     private ViewPager mViewPager;
     private Fav_Channel fav_channel;
     private Fav_Radio fav_radio;
+
+    TextView title_main;
+    TextView title_lang;
+
+    Context context;
+    Resources resources;
+    private String text1_1;
+
+    @Override
+    protected void onStart() {
+        loadData();
+        String lang = title_lang.getText().toString().trim();
+        if (lang.equals("English")){
+            context = LocaleHelper.setLocale(Favorities.this, "en");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+        if (lang.equals("French")){
+            context = LocaleHelper.setLocale(Favorities.this, "fr");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+        if (lang.equals("German")){
+            context = LocaleHelper.setLocale(Favorities.this, "de");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+        if (lang.equals("Arabic")){
+            context = LocaleHelper.setLocale(Favorities.this, "ar");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+        if (lang.equals("Turkish")){
+            context = LocaleHelper.setLocale(Favorities.this, "tr");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+        if (lang.equals("Russian")){
+            context = LocaleHelper.setLocale(Favorities.this, "ru");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+        if (lang.equals("Spanish")){
+            context = LocaleHelper.setLocale(Favorities.this, "es");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+        if (lang.equals("Urdu")){
+            context = LocaleHelper.setLocale(Favorities.this, "ur");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.favorites));
+        }
+
+        super.onStart();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +105,9 @@ public class Favorities extends AppCompatActivity {
 
         adapter.addFragment(fav_channel, "Channels");
         adapter.addFragment(fav_radio, "Radio");
+
+        title_main = findViewById(R.id.title_main);
+        title_lang = findViewById(R.id.title_lang);
 
         mViewPager.setAdapter(adapter);
     }
@@ -76,5 +141,12 @@ public class Favorities extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return fragmentTitleList.get(position);
         }
+    }
+
+
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS , MODE_PRIVATE);
+        text1_1 = sharedPreferences.getString(TEXT1_1 , "English");
+        title_lang.setText(text1_1);
     }
 }

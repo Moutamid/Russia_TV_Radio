@@ -1,7 +1,9 @@
 package com.moutamid.russiatvradio;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Spinner;
@@ -26,6 +28,19 @@ public class Settings_Activity extends AppCompatActivity {
     String[] listItems4;
     String[] listItems6;
 
+    TextView text_setting_1;
+    TextView text_setting_2;
+    TextView text_setting_3;
+    TextView text_setting_4;
+    TextView text_setting_5;
+    TextView text_setting_6;
+
+    TextView title_main;
+    TextView title_lang;
+
+    Context context;
+    Resources resources;
+
     public static final String SHARED_PREFS = "sharedPrefs";
 
     public static final String TEXT1_1 = "text1_1";
@@ -44,6 +59,12 @@ public class Settings_Activity extends AppCompatActivity {
     private String text1_6;
 
     @Override
+    protected void onStart() {
+        current_data();
+        super.onStart();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -56,11 +77,21 @@ public class Settings_Activity extends AppCompatActivity {
         text6 = findViewById(R.id.text6);
         btn_update = findViewById(R.id.btn_update);
 
+        title_main = findViewById(R.id.title_main);
+        title_lang = findViewById(R.id.title_lang);
+
         test_spinner1 = findViewById(R.id.test_spinner1);
         test_spinner2 = findViewById(R.id.test_spinner2);
         test_spinner3 = findViewById(R.id.test_spinner3);
         test_spinner4 = findViewById(R.id.test_spinner4);
         test_spinner6 = findViewById(R.id.test_spinner6);
+
+        text_setting_1 = findViewById(R.id.text_setting_1);
+        text_setting_2 = findViewById(R.id.text_setting_2);
+        text_setting_3 = findViewById(R.id.text_setting_3);
+        text_setting_4 = findViewById(R.id.text_setting_4);
+        text_setting_5 = findViewById(R.id.text_setting_5);
+        text_setting_6 = findViewById(R.id.text_setting_6);
 
         loadData();
         updateData();
@@ -72,6 +103,7 @@ public class Settings_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveData();
+                current_data();
                 Toast.makeText(Settings_Activity.this, "Saved Cahnges", Toast.LENGTH_SHORT).show();
             }
         });
@@ -84,10 +116,10 @@ public class Settings_Activity extends AppCompatActivity {
                         "French",
                         "German",
                         "Arabic",
-                        "Deutsch",
                         "Turkish",
                         "Russian",
                         "Spanish",
+                        "Urdu",
                 };
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(Settings_Activity.this);
                 mBuilder.setTitle("Choose an item");
@@ -245,6 +277,7 @@ public class Settings_Activity extends AppCompatActivity {
         text1_3 = sharedPreferences.getString(TEXT1_3 , "OFF");
         text1_4 = sharedPreferences.getString(TEXT1_4 , "UTC+05:00, Europe");
         text1_6 = sharedPreferences.getString(TEXT1_6 , "AM/PM");
+        title_lang.setText(text1_1);
     }
 
     public void updateData() {
@@ -254,4 +287,106 @@ public class Settings_Activity extends AppCompatActivity {
         text4.setText(text1_4);
         text6.setText(text1_6);
     }
+
+    public void current_data(){
+        loadData();
+        String lang = title_lang.getText().toString().trim();
+        if (lang.equals("English")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "en");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+        if (lang.equals("French")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "fr");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+        if (lang.equals("German")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "de");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+        if (lang.equals("Arabic")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "ar");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+        if (lang.equals("Turkish")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "tr");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+        if (lang.equals("Russian")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "ru");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+        if (lang.equals("Spanish")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "es");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+        if (lang.equals("Urdu")){
+            context = LocaleHelper.setLocale(Settings_Activity.this, "ur");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.settings));
+            text_setting_1.setText(resources.getString(R.string.application_language));
+            text_setting_2.setText(resources.getString(R.string.button_help_text));
+            text_setting_3.setText(resources.getString(R.string.my_sleep_timer));
+            text_setting_4.setText(resources.getString(R.string.my_time_zone));
+            text_setting_5.setText(resources.getString(R.string.my_current_time));
+            text_setting_6.setText(resources.getString(R.string.time_format));
+            btn_update.setText(resources.getString(R.string.save_changes));
+        }
+    }
+
 }

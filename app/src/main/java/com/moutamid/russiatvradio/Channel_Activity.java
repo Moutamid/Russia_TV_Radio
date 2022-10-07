@@ -1,9 +1,16 @@
 package com.moutamid.russiatvradio;
 
+import static com.moutamid.russiatvradio.Settings_Activity.SHARED_PREFS;
+import static com.moutamid.russiatvradio.Settings_Activity.TEXT1_1;
+
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +35,61 @@ public class Channel_Activity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     ProgressDialog pd;
 
+    TextView title_main;
+    TextView title_lang;
+
+    Context context;
+    Resources resources;
+    private String text1_1;
+
+    @Override
+    protected void onStart() {
+        loadData();
+        String lang = title_lang.getText().toString().trim();
+        if (lang.equals("English")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "en");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+        if (lang.equals("French")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "fr");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+        if (lang.equals("German")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "de");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+        if (lang.equals("Arabic")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "ar");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+        if (lang.equals("Turkish")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "tr");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+        if (lang.equals("Russian")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "ru");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+        if (lang.equals("Spanish")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "es");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+        if (lang.equals("Urdu")){
+            context = LocaleHelper.setLocale(Channel_Activity.this, "ur");
+            resources = context.getResources();
+            title_main.setText(resources.getString(R.string.live_tv_channels));
+        }
+
+        super.onStart();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +100,9 @@ public class Channel_Activity extends AppCompatActivity {
         pd.setMessage("Fetching data please wait or check your internet");
         pd.setCanceledOnTouchOutside(true);
         mOnline_Recycler = findViewById(R.id.recyclerView_channel);
+
+        title_main = findViewById(R.id.title_main);
+        title_lang = findViewById(R.id.title_lang);
 
         fab_channel = findViewById(R.id.fab_channel);
         fab_channel.setOnClickListener(new View.OnClickListener() {
@@ -77,5 +142,11 @@ public class Channel_Activity extends AppCompatActivity {
                 pd.dismiss();
             }
         });
+    }
+
+    public void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS , MODE_PRIVATE);
+        text1_1 = sharedPreferences.getString(TEXT1_1 , "English");
+        title_lang.setText(text1_1);
     }
 }

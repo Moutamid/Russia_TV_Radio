@@ -7,16 +7,41 @@
     android:background="@color/appClr"
     tools:context=".Settings_Activity">
 
-    <ImageView
+    <TextView
+        android:id="@+id/title_lang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/title_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_lang"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/settings"
+        android:textColor="@color/green"
+        android:textSize="25sp" />
+
+    <!--<ImageView
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:src="@drawable/setting_name_russia"/>
+        android:src="@drawable/name_setting_geramnay"/>-->
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/name">
+        android:layout_below="@+id/title_main">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,12 +49,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text_setting_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:text="Application Language"
+                android:text="@string/application_language"
                 android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
@@ -50,12 +76,13 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/text_setting_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:text="Button Help Text"
+                android:text="@string/button_help_text"
                 android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
@@ -76,12 +103,13 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/text_setting_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:text="My Sleep Timer"
+                android:text="@string/my_sleep_timer"
                 android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
@@ -102,12 +130,13 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/text_setting_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:text="My Time Zone"
+                android:text="@string/my_time_zone"
                 android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
@@ -128,12 +157,13 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/text_setting_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:text="My Current Time"
+                android:text="@string/my_current_time"
                 android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
@@ -153,12 +183,13 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/text_setting_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:text="Time Format"
+                android:text="@string/time_format"
                 android:textColor="@color/text_gray"
                 android:textSize="15sp" />
 
@@ -189,7 +220,7 @@
                 android:background="@drawable/shape_red"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="SAVE CHANGES"
+                android:text="@string/save_changes"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />

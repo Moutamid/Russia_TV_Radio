@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Russia TV &amp; Radio</string>
+    <string name="russia_tv_radio">Телевидение и Радио России</string>
+    <string name="favorites">Избранное</string>
+    <string name="settings">Настройки</string>
+    <string name="help">Помощь</string>
+    <string name="policy_terms">Политика/Условия</string>
+    <string name="more_apps">Больше приложений</string>
+    <string name="rate_us">Оцените нас !</string>
+    <string name="report">Отчет</string>
+    <string name="live_tv_channels">Живые телеканалы</string>
+    <string name="live_radio">Живое радио</string>
+    <string name="application_language">Язык приложения</string>
+    <string name="button_help_text">Текст справки по кнопкам</string>
+    <string name="my_sleep_timer">Мой таймер сна</string>
+    <string name="my_time_zone">Мой часовой пояс</string>
+    <string name="my_current_time">Мое текущее время</string>
+    <string name="time_format">Формат времени</string>
+    <string name="save_changes">Сохранить изменения</string>
+</resources>

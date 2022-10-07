@@ -7,9 +7,33 @@
     android:background="@android:color/transparent"
     tools:context=".BottomSheetDialog">
 
+    <TextView
+        android:id="@+id/title_lang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/title_main"
+        android:layout_below="@+id/title_lang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/russia_tv_radio"
+        android:textColor="@color/green"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        android:textSize="25sp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/title_main"
         android:background="@drawable/shape_appclr4"
         android:orientation="vertical">
 
@@ -37,6 +61,7 @@
                 android:layout_margin="5dp">
 
                 <TextView
+                    android:id="@+id/text_fav"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -44,7 +69,7 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_favorite_24"
-                    android:text="Favorites"/>
+                    android:text="@string/favorites"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -59,6 +84,7 @@
                 android:layout_margin="5dp">
 
                 <TextView
+                    android:id="@+id/text_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -67,7 +93,7 @@
                     android:padding="5dp"
                     android:drawableTint="@color/green"
                     android:drawableLeft="@drawable/ic_baseline_settings_24"
-                    android:text="Settings"/>
+                    android:text="@string/settings"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -90,6 +116,7 @@
                 android:layout_margin="5dp">
 
                 <TextView
+                    android:id="@+id/text_help"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -98,7 +125,7 @@
                     android:padding="5dp"
                     android:drawableTint="@color/green"
                     android:drawableLeft="@drawable/ic_baseline_help_outline_24"
-                    android:text="Help"/>
+                    android:text="@string/help"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -113,6 +140,7 @@
                 android:layout_margin="5dp">
 
                 <TextView
+                    android:id="@+id/text_term"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -121,7 +149,7 @@
                     android:padding="5dp"
                     android:drawableTint="@color/green"
                     android:drawableLeft="@drawable/ic_baseline_feedback_24"
-                    android:text="Policy/Terms"/>
+                    android:text="@string/policy_terms"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -144,6 +172,7 @@
                 android:layout_margin="5dp">
 
                 <TextView
+                    android:id="@+id/text_rate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -152,7 +181,7 @@
                     android:padding="5dp"
                     android:drawableTint="@color/green"
                     android:drawableLeft="@drawable/ic_baseline_star_rate_24"
-                    android:text="Rate Us !"/>
+                    android:text="@string/rate_us"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -167,6 +196,7 @@
                 android:layout_margin="5dp">
 
                 <TextView
+                    android:id="@+id/text_report"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -175,7 +205,7 @@
                     android:padding="5dp"
                     android:drawableTint="@color/green"
                     android:drawableLeft="@drawable/ic_baseline_report_24"
-                    android:text="Report"/>
+                    android:text="@string/report"/>
 
             </androidx.cardview.widget.CardView>
 
