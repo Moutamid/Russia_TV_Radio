@@ -74,6 +74,15 @@ public class Add_Channel extends AppCompatActivity {
                 String time = channel_time.getText().toString().trim();
                 String link = channel_link.getText().toString().trim();
 
+                if (link.contains("http://")){
+                    String returnedString = link.replace("http://" , "https://");
+                    channel_link.setText(returnedString);
+                }
+                else if (link.contains("https://")){
+                    String returnedString = link.replace("https://" , "https://");
+                    channel_link.setText(returnedString);
+                }
+
                 if (id.isEmpty()){
                     Toast.makeText(Add_Channel.this, "Enter Unique Channel ID", Toast.LENGTH_SHORT).show();
                 }
