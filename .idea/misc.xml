@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/New folder/Bridgetlinx/Russia_TV_Radio/app/src/main/res/layout/activity_bottom_sheet_dialog.xml" value="0.12273550724637682" />
+        <entry key="..\:/New folder/Bridgetlinx/Russia_TV_Radio/app/src/main/res/layout/activity_main.xml" value="0.14266304347826086" />
         <entry key="app/src/main/res/drawable/shape_appclr4.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_add_channel.xml" value="0.25677083333333334" />
         <entry key="app/src/main/res/layout/activity_add_radio.xml" value="0.25677083333333334" />
@@ -27,7 +29,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
