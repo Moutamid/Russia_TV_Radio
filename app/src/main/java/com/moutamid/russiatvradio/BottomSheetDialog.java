@@ -203,7 +203,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse("alfidasaldana@gmail.com")));
+                startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:alfidasaldana@gmail.com")));
             }
         });
         return v;
