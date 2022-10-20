@@ -40,7 +40,7 @@
             android:id="@+id/fab_channel2"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_margin="20sp"
             android:tintMode="@color/white"
             android:src="@drawable/ic_baseline_create_24"/>

@@ -42,7 +42,7 @@
             android:layout_alignParentBottom="true"
             android:layout_margin="20sp"
             android:tintMode="@color/white"
-            android:visibility="visible"
+            android:visibility="gone"
             android:src="@drawable/ic_baseline_create_24"/>
 
         <androidx.core.widget.NestedScrollView
