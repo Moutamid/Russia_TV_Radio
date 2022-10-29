@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.moutamid.russiatvradio",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 3,
+      "versionName": "1.2",
+      "outputFile": "RussianTv-1.2-release.apk"
+    }
+  ],
+  "elementType": "File"
+}
