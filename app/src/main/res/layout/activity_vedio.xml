@@ -150,4 +150,11 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/startBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/transparent_img"
+        android:layout_centerInParent="true" />
+
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.moutamid.russiatvradio;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -38,7 +39,7 @@ public class Adapter_Channel extends RecyclerView.Adapter<Adapter_Channel.Holder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HolderAndroid holder, int position) {
+    public void onBindViewHolder(@NonNull HolderAndroid holder, @SuppressLint("RecyclerView") int position) {
         Model_Channel modelAndroid = androidArrayList.get(position);
 
         String name_channel = modelAndroid.getName();

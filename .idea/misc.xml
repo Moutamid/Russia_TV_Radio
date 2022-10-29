@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/drawable/transparent_img.xml" value="0.1885" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_vedio.xml" value="0.25" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/row_channel_list.xml" value="0.33" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/row_channels.xml" value="0.33" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/select_player_dialog.xml" value="0.5" />
         <entry key="..\:/New folder/Bridgetlinx/Russia_TV_Radio/app/src/main/res/layout/activity_bottom_sheet_dialog.xml" value="0.12273550724637682" />
         <entry key="..\:/New folder/Bridgetlinx/Russia_TV_Radio/app/src/main/res/layout/activity_main.xml" value="0.14266304347826086" />
         <entry key="..\:/Users/Azan Comp/AndroidStudioProjects/Russia_TV_Radio/app/src/main/res/layout/activity_channel.xml" value="0.2" />

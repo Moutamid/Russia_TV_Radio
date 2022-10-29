@@ -2,23 +2,34 @@ package com.moutamid.russiatvradio;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import net.webilisim.webplayer.WEBPlayer;
+import net.webilisim.webplayer.WEBPlayerMInterface;
+import net.webilisim.webplayer.WEBPlayerMediaSystem;
 import net.webilisim.webplayer.WEBPlayerStd;
+import net.webilisim.webplayer.WEBPlayerUtils;
 
 public class VedioActivity extends AppCompatActivity {
     WEBPlayerStd webPlayerStd;
@@ -28,7 +39,7 @@ public class VedioActivity extends AppCompatActivity {
 
     ImageView dec_brightness , inc_brightness;
     ImageView dec_sound , inc_sound;
-    ImageView cast;
+    ImageView cast, startBtn;
     ImageView stop;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -45,6 +56,7 @@ public class VedioActivity extends AppCompatActivity {
         dec_sound = findViewById(R.id.dec_sound);
         inc_sound = findViewById(R.id.inc_sound);
         cast = findViewById(R.id.cast);
+        startBtn = findViewById(R.id.startBtn);
         stop = findViewById(R.id.stop);
 
         Bundle bundle = getIntent().getExtras();
@@ -53,7 +65,6 @@ public class VedioActivity extends AppCompatActivity {
             name.setText(bundle.getString("name"));
         }
 
-
         String link_text = link.getText().toString().trim();
         String name_text = name.getText().toString().trim();
 
@@ -61,6 +72,14 @@ public class VedioActivity extends AppCompatActivity {
         layout_options = findViewById(R.id.layout_buttons);
 
         webPlayerStd.setUp(link_text , name_text);
+
+        startBtn.setOnClickListener(v -> {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setDataAndType(Uri.parse(link_text),"video/*");
+            i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(Intent.createChooser(i, "Choose Your Player"));
+
+        });
 
         AudioManager audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
 
