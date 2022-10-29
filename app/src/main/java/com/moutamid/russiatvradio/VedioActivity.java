@@ -78,7 +78,6 @@ public class VedioActivity extends AppCompatActivity {
             i.setDataAndType(Uri.parse(link_text),"video/*");
             i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             startActivity(Intent.createChooser(i, "Choose Your Player"));
-
         });
 
         AudioManager audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
