@@ -17,4 +17,8 @@
     <string name="my_current_time">My Current Time</string>
     <string name="time_format">Time Format</string>
     <string name="save_changes">SAVE CHANGES</string>
+
+    <string name="app_ad_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_ad_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>

@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/drawable/shape_appclr3.xml" value="0.1885" />
         <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/drawable/transparent_img.xml" value="0.1885" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_add_channel.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_add_radio.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_bottom_sheet_dialog.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_channel.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_channel_list.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_edit_channel.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_edit_radio.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_favorities.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_music.xml" value="0.33" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_radio.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_radio_list.xml" value="0.209375" />
+        <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_settings.xml" value="0.209375" />
         <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/activity_vedio.xml" value="0.25" />
         <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/row_channel_list.xml" value="0.33" />
         <entry key="..\:/BridgeLinxProject/RussiaTvRadio/app/src/main/res/layout/row_channels.xml" value="0.33" />

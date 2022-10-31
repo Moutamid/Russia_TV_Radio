@@ -41,6 +41,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/adView"
         android:layout_below="@+id/title_main">
 
         <LinearLayout
@@ -67,8 +68,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/shape_cardclr"
-                android:gravity="left"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:gravity="left"
                 android:padding="10dp"
                 android:text="Select Language"
                 android:textColor="@color/white"
@@ -94,8 +95,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/shape_cardclr"
-                android:gravity="left"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:gravity="left"
                 android:padding="10dp"
                 android:text="Select Help Text"
                 android:textColor="@color/white"
@@ -121,8 +122,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/shape_cardclr"
-                android:gravity="left"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:gravity="left"
                 android:padding="10dp"
                 android:text="Select Sleep Timer"
                 android:textColor="@color/white"
@@ -148,8 +149,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/shape_cardclr"
-                android:gravity="left"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:gravity="left"
                 android:padding="10dp"
                 android:text="Select Time Zone"
                 android:textColor="@color/white"
@@ -201,8 +202,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/shape_cardclr"
-                android:gravity="left"
                 android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:gravity="left"
                 android:padding="10dp"
                 android:text="Select Time Format"
                 android:textColor="@color/white"
@@ -271,4 +272,16 @@
         android:layout_margin="10dp"
         android:padding="10dp"
         android:visibility="gone" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_id">
+    </com.google.android.gms.ads.AdView>
+
 </RelativeLayout>
