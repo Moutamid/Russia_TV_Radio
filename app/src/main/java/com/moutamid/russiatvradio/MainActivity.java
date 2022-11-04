@@ -130,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.test).setOnClickListener(v -> startActivity(new Intent(this, TestActivity.class)));
+
         AdView mAdView = findViewById(R.id.adView);
         adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

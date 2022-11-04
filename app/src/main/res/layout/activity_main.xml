@@ -40,6 +40,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test Activity"/>
+
+
             <LinearLayout
                 android:id="@+id/fab_bottom_sheet"
                 android:layout_width="match_parent"
