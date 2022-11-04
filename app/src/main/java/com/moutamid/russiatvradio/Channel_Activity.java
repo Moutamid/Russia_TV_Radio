@@ -20,6 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.facebook.ads.AudienceNetworkAds;
+import com.facebook.ads.NativeAdsManager;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -51,6 +53,10 @@ public class Channel_Activity extends AppCompatActivity {
 
     TextView title_main;
     TextView title_lang;
+
+    Adapter_Channel adapter_online;
+
+    NativeAdsManager nativeAdsManager;
 
     InterstitialAd mInterstitialAd;
     AdRequest adRequest;
@@ -111,6 +117,7 @@ public class Channel_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_channel);
+        AudienceNetworkAds.initialize(this);
 
         pd = new ProgressDialog(this);
         pd.setTitle("Loading...");
@@ -176,7 +183,7 @@ public class Channel_Activity extends AppCompatActivity {
         mOnline_Recycler.setLayoutManager(gridLayoutManager);
 
         modelOnlines_list = new ArrayList<>();
-        Adapter_Channel adapter_online = new Adapter_Channel(Channel_Activity.this , modelOnlines_list);
+        adapter_online = new Adapter_Channel(Channel_Activity.this , modelOnlines_list, nativeAdsManager);
         mOnline_Recycler.setAdapter(adapter_online);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Channels_app3");

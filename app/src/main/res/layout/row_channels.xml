@@ -186,6 +186,7 @@
     </androidx.cardview.widget.CardView>
 
     <ImageView
+        android:id="@+id/tvb"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@+id/card_channel"
@@ -194,4 +195,15 @@
         android:layout_marginRight="15dp"
         android:scaleType="fitXY"
         android:src="@drawable/bottom_img_tv" />
+
+    <com.facebook.ads.NativeAdLayout
+        android:id="@+id/native_ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_below="@id/tvb"/>
+
+
+
 </RelativeLayout>
