@@ -183,7 +183,7 @@ public class Channel_Activity extends AppCompatActivity {
         mOnline_Recycler.setLayoutManager(gridLayoutManager);
 
         modelOnlines_list = new ArrayList<>();
-        adapter_online = new Adapter_Channel(Channel_Activity.this , modelOnlines_list, nativeAdsManager);
+        adapter_online = new Adapter_Channel(Channel_Activity.this , modelOnlines_list);
         mOnline_Recycler.setAdapter(adapter_online);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Channels_app3");

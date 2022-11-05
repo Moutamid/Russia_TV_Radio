@@ -39,11 +39,6 @@ public class Adapter_Channel extends RecyclerView.Adapter<Adapter_Channel.Holder
 
     private Context context;
     private ArrayList<Model_Channel> androidArrayList;
-    List<NativeAd> mAdItem;
-    NativeAdsManager nativeAdsManager;
-    private static final int AD_DISPLAY_FREQUENCY = 4;
-    private static final int POST_TYPE = 0;
-    private static final int AD_TYPE = 1;
 
     private LinearLayout adView;
     private NativeAd nativeAd;
@@ -51,24 +46,15 @@ public class Adapter_Channel extends RecyclerView.Adapter<Adapter_Channel.Holder
     View containerView;
 
 
-    public Adapter_Channel(Context context, ArrayList<Model_Channel> androidArrayList, NativeAdsManager nativeAdsManager) {
+    public Adapter_Channel(Context context, ArrayList<Model_Channel> androidArrayList) {
         this.context = context;
         this.androidArrayList = androidArrayList;
-        this.nativeAdsManager = nativeAdsManager;
-        mAdItem = new ArrayList<>();
     }
 
     @NonNull
     @Override
     public HolderAndroid onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Stash.init(context);
-        /*if (viewType == AD_TYPE){
-            NativeAdLayout nativeAdLayout = (NativeAdLayout) LayoutInflater.from(context).inflate(R.layout.facebook_native_ad, parent, false);
-            return new UnifiedHolder(nativeAdLayout);
-        } else {
-            View view = LayoutInflater.from(context).inflate(R.layout.row_channels, parent, false);
-            return new HolderAndroid(view);
-        }*/
         containerView = LayoutInflater.from(parent.getContext()).inflate(R.layout.nativefacebook_ads,parent,false);
         View view = LayoutInflater.from(context).inflate(R.layout.row_channels, parent, false);
         return new HolderAndroid(view);
@@ -77,115 +63,7 @@ public class Adapter_Channel extends RecyclerView.Adapter<Adapter_Channel.Holder
 
     @Override
     public void onBindViewHolder(@NonNull HolderAndroid holder, @SuppressLint("RecyclerView") int position) {
-        int viewPoint = getItemViewType(position);
         AudienceNetworkAds.initialize(context);
-        /*switch (viewPoint){
-            case AD_TYPE:
-                NativeAd nativeAd;
-                if (mAdItem.size() > position / AD_DISPLAY_FREQUENCY){
-                    nativeAd = mAdItem.get(position/AD_DISPLAY_FREQUENCY);
-                } else {
-                    nativeAd = nativeAdsManager.nextNativeAd();
-                    if (nativeAd != null){
-                        if(nativeAd.isAdInvalidated()){
-                            mAdItem.add(nativeAd);
-                        }
-                    }
-                }
-
-                UnifiedHolder adHolder = (UnifiedHolder) holder;
-                adHolder.adContainer.removeAllViews();
-
-                if (nativeAd!=null){
-                    adHolder.tv_title.setText(nativeAd.getAdvertiserName());
-                    adHolder.tv_body.setText(nativeAd.getAdBodyText());
-                    adHolder.tv_sponsored.setText("Sponsored");
-                    adHolder.tv_social.setText(nativeAd.getAdSocialContext());
-                    adHolder.callToAction.setText(nativeAd.getAdCallToAction());
-                    adHolder.callToAction.setVisibility(nativeAd.hasCallToAction() ? View.VISIBLE: View.INVISIBLE);
-
-                    AdOptionsView adOptionsView = new AdOptionsView(context, nativeAd, adHolder.nativeAdLayout);
-                    adHolder.adContainer.addView(adOptionsView, 0);
-
-                    List<View> clichableView = new ArrayList<>();
-                    clichableView.add(adHolder.ivAdIcon);
-                    clichableView.add(adHolder.mediaView);
-                    clichableView.add(adHolder.callToAction);
-                    nativeAd.registerViewForInteraction(adHolder.nativeAdLayout, adHolder.mediaView, adHolder.ivAdIcon, clichableView);
-                }
-
-                break;
-            case POST_TYPE:
-                HolderAndroid Aholder = (HolderAndroid) holder;
-                Model_Channel modelAndroid = androidArrayList.get(position);
-
-                String name_channel = modelAndroid.getName();
-                String des_channel = modelAndroid.getDes();
-                String cast_channel = modelAndroid.getCast();
-                String time_channel = modelAndroid.getTime();
-                String link_channel = modelAndroid.getLink();
-
-                Aholder.name.setText(name_channel);
-                Aholder.des.setText(des_channel);
-                Aholder.cast.setText(cast_channel);
-                Aholder.time.setText(time_channel);
-                Aholder.link.setText(link_channel);
-                Glide.with(context).load(androidArrayList.get(position).getImage1()).placeholder(R.drawable.logo).into(Aholder.image1);
-
-                Aholder.card_channel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String linkText = Aholder.link.getText().toString().trim();
-                        String nameText = Aholder.name.getText().toString().trim();
-                        Intent intent = new Intent(context , VedioActivity.class);
-                        intent.putExtra("link" , linkText);
-                        intent.putExtra("name" , nameText);
-                        context.startActivity(intent);
-                    }
-                });
-
-                if (Stash.getBoolean(position+""))
-                    Aholder.btn_fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-                else Aholder.btn_fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-
-                Aholder.btn_fav.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        if (Stash.getBoolean(position+"")){
-                            // REMOVE FAVOURITE
-                            Aholder.btn_fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-                            Stash.put(position+"", false);
-                        }else {
-                            // SAVE FAVOURITE
-                            Aholder.btn_fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-                            Stash.put(position+"", true);
-                        }
-
-                /*if (modelAndroid.isFavourite()){
-                    // REMOVE  FAVOURITE
-
-                    modelAndroid.setFavourite(false);
-                    holder.btn_fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-                    Stash.put();// YE LIST JAHAN SE RETREIVE HUI HE WAHAN E SAVE KRNI HE YAHAN
-
-                }else {
-                    // ADD FAVOURITE
-                    modelAndroid.setFavourite(true);
-                    holder.btn_fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-                }*/ /*
-
-                        Aholder.btn_fav_done.setVisibility(View.VISIBLE);
-                        Aholder.btn_fav.setVisibility(View.GONE);
-                        ArrayList<Model_Channel> our_arraylist = Stash.getArrayList("name_of_arraylist" ,Model_Channel.class);
-                        our_arraylist.add(modelAndroid);
-                        Stash.put("name_of_arraylist" , our_arraylist);
-                        Toast.makeText(context, "Added to Favorities", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                break;
-        }*/
 
         nativeAd = new NativeAd(context, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
 
@@ -345,12 +223,7 @@ public class Adapter_Channel extends RecyclerView.Adapter<Adapter_Channel.Holder
 
     @Override
     public int getItemCount() {
-        return androidArrayList.size() + mAdItem.size();
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        return position % AD_DISPLAY_FREQUENCY == 0 && position != 0 ? AD_TYPE : POST_TYPE;
+        return androidArrayList.size();
     }
 
     class HolderAndroid extends RecyclerView.ViewHolder {
