@@ -65,7 +65,7 @@ public class Adapter_Channel extends RecyclerView.Adapter<Adapter_Channel.Holder
     public void onBindViewHolder(@NonNull HolderAndroid holder, @SuppressLint("RecyclerView") int position) {
         AudienceNetworkAds.initialize(context);
 
-        nativeAd = new NativeAd(context, "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
+        nativeAd = new NativeAd(context, context.getResources().getString(R.string.fb_ad_id));
 
         NativeAdListener nativeAdListener = new NativeAdListener() {
             @Override
