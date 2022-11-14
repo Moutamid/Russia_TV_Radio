@@ -1,5 +1,6 @@
 package com.moutamid.russiatvradio;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -25,6 +26,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import net.webilisim.webplayer.WEBPlayer;
 import net.webilisim.webplayer.WEBPlayerMInterface;
 import net.webilisim.webplayer.WEBPlayerMediaSystem;
@@ -36,6 +45,7 @@ public class VedioActivity extends AppCompatActivity {
     RelativeLayout layout_options;
 
     TextView link , name;
+    AdRequest adRequest;
 
     ImageView dec_brightness , inc_brightness;
     ImageView dec_sound , inc_sound;
@@ -58,6 +68,48 @@ public class VedioActivity extends AppCompatActivity {
         cast = findViewById(R.id.cast);
         startBtn = findViewById(R.id.startBtn);
         stop = findViewById(R.id.stop);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdView mAdView = findViewById(R.id.adView);
+        adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdClicked() {
+                super.onAdClicked();
+            }
+
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+            }
+
+            @Override
+            public void onAdImpression() {
+                super.onAdImpression();
+            }
+
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+            }
+
+            @Override
+            public void onAdOpened() {
+                super.onAdOpened();
+            }
+        });
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
